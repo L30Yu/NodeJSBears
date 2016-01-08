@@ -17,7 +17,11 @@ var router 		= express.Router();			// get an instance of the express Router
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 // use remote mongoDB from mongolab
-mongoose.connect('mongodb://leo:111111@ds033103.mongolab.com:33103/leo');
+//mongoose.connect('mongodb://leo:111111@ds033103.mongolab.com:33103/leo');
+mongoose.connect(process.env.MONGOLAB_URI, function (error){
+	if (error) console.error(error);
+	else console.log('mongo connected, Leo!');
+});
 
 var port = process.env.PORT || 8080;		// set our port
 
