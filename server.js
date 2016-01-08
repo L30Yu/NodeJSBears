@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGOLAB_URI, function (error){
 	else console.log('mongo connected, Leo!');
 });
 
-var port = process.env.PORT || 8080;		// set our port
+var port = process.env.PORT || 5000;		// set our port
 
 // ROUTES FOR OUR API
 // ====================
